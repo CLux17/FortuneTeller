@@ -18,9 +18,9 @@ namespace FortuneTeller
             Console.WriteLine($"So your age is {age}? \n" +
                 $"You're kinda old... but I digress \n" +
                 $"What Month were you born in?");
-            int date;
+            
             String monthastext = Console.ReadLine();
-            date = Convert.ToInt32(monthastext);
+            int date = Convert.ToInt32(monthastext);
 
             Console.WriteLine(monthastext);
 
