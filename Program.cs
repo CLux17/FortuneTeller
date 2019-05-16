@@ -58,41 +58,47 @@ namespace FortuneTeller
                 "\n" +
                 "Push N and enter if you dare not tempt the fates...");
             string fate = Console.ReadLine();
+            Console.WriteLine("\n" +
+                "\n" +
+                "\n" +
+                "\n");
 
-           
-
+            int age = 0;
+            float income = 0.0f;
+            string siblings = "unknown1";
+            string color = "Unknown2";
 
             if (fate.ToLower() == "y")
             {
 
                 //Solution for Age
-                int age = 1;
+                
                 if (nAge%2 == 0)
                     {
-                        int age = 24;
+                        age = 24;
                     }
                 else
                     {
-                        int age = 17;
+                        age = 17;
                     }
 
                 //Solution for Month
-                int income = 0;
+                
                 if (nMonth <= 4)
                     {
-                        int income = 3;
+                        income = 3;
                     }
                 else if (nMonth >= 5 || nMonth <= 8)
                     {
-                        int income = 257843;
+                        income = 257843;
                     }
                 else if (nMonth >= 9)
                     {
-                        float income = 45283;
+                        income = 45283;
                     }    
                 
                 //Solution for color choice
-                string color = "Unknown";
+                
                 switch (tColor.ToLower())
                 {
                     case "red":
@@ -119,11 +125,36 @@ namespace FortuneTeller
                 }
 
                 //Siblings
-                int siblings = 1;
+
+                if (nSiblings >= 3)
+                    {
+                        siblings = "India";
+                    }
+
+                else if (nSiblings < 0)
+                    {
+                    siblings = "Chernobyl";
+                    }
+
+                else
+                {
+                    switch (nSiblings)
+                    {
+                        case 0:
+                            siblings = "paris, france";
+                            break;
+                        case 1:
+                            siblings = "hong kong";
+                            break;
+                        case 2:
+                            siblings = "soviet russia";
+                            break;
+                    }
+                }
 
 
-                //Answer
-                Console.WriteLine($"{name}, You will retire in {age} years, \n" +
+                        //Answer
+                        Console.WriteLine($"{name}, You will retire in {age} years, \n" +
                     $"your bank account will at that time have {income} Dollars in it, \n" +
                     $"You will have a vacation home in {siblings}, \n" +
                     $"And your main mode of transportation will be by {color}");
