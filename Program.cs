@@ -6,29 +6,29 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
-            //Greeting
+            
             Console.WriteLine("Greetings!! and welcome to the Fortune Teller!! \n" +
                 "\n" +
-            //Ask For First Name
+           
                 "Type your first name");
             string fName = Console.ReadLine();
 
-            //ASk for last name
+            
             Console.WriteLine("");
             Console.WriteLine($"Ok {fName}, Now I need your last name.");
             string lName = Console.ReadLine();
 
-            //Comment to confirm name and combine first and last
+            
             Console.WriteLine("");
             Console.WriteLine($"{lName}, thats a very nice last name");
             string name = (fName +" "+ lName);
 
-            //Aquire age
+            
             Console.WriteLine("");
             Console.WriteLine($"Alright {name}, using numerals, how old are you?");
             int nAge = Convert.ToInt32(Console.ReadLine());
 
-            //Comment on age,  and aquire month
+            
             Console.WriteLine("");
             Console.WriteLine($"So your age is {nAge}? \n" +
                 $"Wow, you're kinda old... but I digress, \n" +
@@ -37,20 +37,20 @@ namespace FortuneTeller
                 $"(Hint, January = 1, Febreuary = 2, etc. etc.");
             int nMonth = Convert.ToInt32(Console.ReadLine());
 
-            //aquire favorite color
+            
             Console.WriteLine("");
             Console.WriteLine($"Ok, {name}, Now i need your favorite ROYGBIV color?\n" +
                 "Don't know what ROYGBIV is? type,\"help\"");
-            string tColor = Console.ReadLine();
+            string tColor = Console.ReadLine().ToLower();
 
-            //provide assistance for user if not know ROYGBIV
-            while (tColor.ToLower() == "help")
+            
+            while (tColor == "help")
             {
                 Console.WriteLine("ROYGBIV is the primary colors, Red Orange, Yellow, Green, Blue, Indigo, and Violet.");
                 tColor = Console.ReadLine();
             }
 
-            //Aquire # of siblings
+            
             Console.WriteLine("");
             Console.WriteLine($"Final question {name}, How many siblings do you have?");
             int nSiblings = Convert.ToInt32(Console.ReadLine());
@@ -60,6 +60,7 @@ namespace FortuneTeller
             Console.WriteLine("Fantastic, I have all the info I need to read your fortune!\n");
             Console.WriteLine("\n" +
                 "\n" +
+
                 "Push Y and enter if you dare to tempt the fates and know their plans...\n" +
                 "\n" +
                 "Push N and enter if you dare not tempt the fates...");
@@ -67,9 +68,9 @@ namespace FortuneTeller
             Console.WriteLine("\n" +
                 "\n" +
                 "\n" +
-                "\n");// extra space added at the end to break up the answer from the rest of the lines above
+                "\n");
 
-            //establishing variables for use in final solution
+            
             int age = 0;
             float income = 0.0f;
             string siblings = "unknown1";
@@ -78,7 +79,7 @@ namespace FortuneTeller
             if (fate.ToLower() == "y")
             {
 
-                //Solution for Age
+                
                 
                 if (nAge%2 == 0)
                     {
@@ -89,7 +90,7 @@ namespace FortuneTeller
                         age = 17;
                     }
 
-                //Solution for Month
+               
                 
                 if (nMonth <= 4)
                     {
@@ -104,9 +105,9 @@ namespace FortuneTeller
                         income = 45283;
                     }    
                 
-                //Solution for color choice
                 
-                switch (tColor.ToLower())
+                
+                switch (tColor)
                 {
                     case "red":
                             color = "a giant peach";
@@ -129,9 +130,12 @@ namespace FortuneTeller
                     case "violet":
                             color = "a Rolls-Royce";
                         break;
+                    default:
+                        color = "unknown";
+                        break;
                 }
 
-                //Siblings
+                
 
                 if (nSiblings >= 3)
                     {
@@ -160,7 +164,7 @@ namespace FortuneTeller
                 }
 
 
-                        //Answer
+                        
                         Console.WriteLine($"{name}, You will retire in {age} years, \n" +
                     $"your bank account at that time will have {income} dollars in it, \n" +
                     $"You will have a vacation home in {siblings}, \n" +
