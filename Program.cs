@@ -14,18 +14,22 @@ namespace FortuneTeller
             string fName = Console.ReadLine();
 
             //ASk for last name
+            Console.WriteLine("");
             Console.WriteLine($"Ok {fName}, Now I need your last name.");
             string lName = Console.ReadLine();
 
             //Comment to confirm name and combine first and last
+            Console.WriteLine("");
             Console.WriteLine($"{lName}, thats a very nice last name");
             string name = (fName +" "+ lName);
 
             //Aquire age
+            Console.WriteLine("");
             Console.WriteLine($"Alright {name}, using numerals, how old are you?");
             int nAge = Convert.ToInt32(Console.ReadLine());
 
             //Comment on age,  and aquire month
+            Console.WriteLine("");
             Console.WriteLine($"So your age is {nAge}? \n" +
                 $"Wow, you're kinda old... but I digress, \n" +
                 $"\n" +
@@ -34,7 +38,8 @@ namespace FortuneTeller
             int nMonth = Convert.ToInt32(Console.ReadLine());
 
             //aquire favorite color
-            Console.WriteLine("$Ok, {name}, Now i need your favorite ROYGBIV color?\n" +
+            Console.WriteLine("");
+            Console.WriteLine($"Ok, {name}, Now i need your favorite ROYGBIV color?\n" +
                 "Don't know what ROYGBIV is? type,\"help\"");
             string tColor = Console.ReadLine();
 
@@ -46,12 +51,13 @@ namespace FortuneTeller
             }
 
             //Aquire # of siblings
+            Console.WriteLine("");
             Console.WriteLine($"Final question {name}, How many siblings do you have?");
             int nSiblings = Convert.ToInt32(Console.ReadLine());
 
 
+            Console.WriteLine("");
             Console.WriteLine("Fantastic, I have all the info I need to read your fortune!\n");
-            Console.ReadLine();
             Console.WriteLine("\n" +
                 "\n" +
                 "Push Y and enter if you dare to tempt the fates and know their plans...\n" +
@@ -63,6 +69,7 @@ namespace FortuneTeller
                 "\n" +
                 "\n");
 
+            //establishing variables for use in final solution
             int age = 0;
             float income = 0.0f;
             string siblings = "unknown1";
@@ -75,7 +82,7 @@ namespace FortuneTeller
                 
                 if (nAge%2 == 0)
                     {
-                        age = 24;
+                        age = 652;
                     }
                 else
                     {
@@ -86,7 +93,7 @@ namespace FortuneTeller
                 
                 if (nMonth <= 4)
                     {
-                        income = 3;
+                        income = 3.52f;
                     }
                 else if (nMonth >= 5 || nMonth <= 8)
                     {
@@ -102,25 +109,25 @@ namespace FortuneTeller
                 switch (tColor.ToLower())
                 {
                     case "red":
-                        color = "Maserati";
+                            color = "a giant peach";
                         break;
                     case "orange":
-                        color = "stallion";
+                            color = "the Dukes of Hazard's Car";
                         break;
                     case "yellow":
-                        color = "chariot";
+                            color = "a yellow submarine";
                         break;
                     case "green":
-                        color = "taxi";
+                            color = "a Space X Rocket";
                         break;
                     case "blue":
-                        color = "rickshaw";
+                            color = "a Flying Car";
                         break;
                     case "indigo":
-                        color = "motor scooter";
+                            color = "a Pogo Stick";
                         break;
                     case "violet":
-                        color = "flying saucer";
+                            color = "a Rolls-Royce";
                         break;
                 }
 
@@ -128,12 +135,12 @@ namespace FortuneTeller
 
                 if (nSiblings >= 3)
                     {
-                        siblings = "India";
+                        siblings = "BFE, probably to get some peace and quiet";
                     }
 
                 else if (nSiblings < 0)
                     {
-                    siblings = "Chernobyl";
+                    siblings = "a nice beach front property with a white picket fence in Hell";
                     }
 
                 else
@@ -141,13 +148,13 @@ namespace FortuneTeller
                     switch (nSiblings)
                     {
                         case 0:
-                            siblings = "paris, france";
+                            siblings = "the gulag, in old Soviet Russia. In Soviet Russia, Big brother is your sibling.";
                             break;
                         case 1:
-                            siblings = "hong kong";
+                            siblings = "Berlin, Germany";
                             break;
                         case 2:
-                            siblings = "soviet russia";
+                            siblings = "Reykjavick, Iceland";
                             break;
                     }
                 }
@@ -155,7 +162,7 @@ namespace FortuneTeller
 
                         //Answer
                         Console.WriteLine($"{name}, You will retire in {age} years, \n" +
-                    $"your bank account will at that time have {income} Dollars in it, \n" +
+                    $"your bank account at that time will have {income} dollars in it, \n" +
                     $"You will have a vacation home in {siblings}, \n" +
                     $"And your main mode of transportation will be by {color}");
 
