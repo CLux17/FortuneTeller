@@ -67,7 +67,7 @@ namespace FortuneTeller
             Console.WriteLine("\n" +
                 "\n" +
                 "\n" +
-                "\n");
+                "\n");// extra space added at the end to break up the answer from the rest of the lines above
 
             //establishing variables for use in final solution
             int age = 0;
